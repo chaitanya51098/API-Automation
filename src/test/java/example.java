@@ -24,6 +24,5 @@ public class example {
             statusCode(200).
             body("data.id",equalTo(2))
             .log().all();
-
     }
 }
