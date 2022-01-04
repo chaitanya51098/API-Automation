@@ -15,14 +15,23 @@ public class example {
         System.out.println(response.getBody().asString());
         System.out.println(response.getStatusLine());
         System.out.println(response.getTime());
+
+        Response response1=RestAssured.get("https://reqres.in/api/users?page=2")
+                .then()
+                .extract()
+                .response();
+        System.out.println(response1.asPrettyString());
+
     }
     @Test
     public void func_2(){
     baseURI="https://reqres.in";
-    given().get("/api/users/2").
-            then().
-            statusCode(200).
-            body("data.id",equalTo(2))
-            .log().all();
+             given()
+            .get("/api/users/2")
+            .then()
+            .statusCode(200)
+            .body("data.id",equalTo(2))
+            .log()
+            .all();
     }
 }
