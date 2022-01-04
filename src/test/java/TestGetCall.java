@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 
-public class example {
+public class TestGetCall {
 
     @Test
     public void func_1(){
@@ -34,4 +34,5 @@ public class example {
             .log()
             .all();
     }
+
 }
