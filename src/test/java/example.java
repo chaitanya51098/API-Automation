@@ -1,3 +1,4 @@
+import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -8,8 +9,7 @@ public class example {
 
     @Test
     public void func_1(){
-        Response response=get("https://reqres.in/api/users/2");
-        //response.getStatusCode();
+        Response response= RestAssured.get("https://reqres.in/api/users/2");
         //System.out.println(response.getStatusCode());
         Assert.assertEquals(response.getStatusCode(),200);
         System.out.println(response.getBody().asString());
