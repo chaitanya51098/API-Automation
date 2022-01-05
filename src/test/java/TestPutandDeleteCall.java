@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 public class TestPutandDeleteCall {
+
     @Test
     public void test_1(){
         baseURI="https://reqres.in";
