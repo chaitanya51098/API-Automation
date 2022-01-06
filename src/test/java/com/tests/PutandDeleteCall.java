@@ -1,9 +1,11 @@
+package com.tests;
+
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class TestPutandDeleteCall {
+public class PutandDeleteCall {
 
     @Test
     public void test_1(){

@@ -1,10 +1,12 @@
+package com.tests;
+
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class TestPostCall {
+public class PostCall {
 
     @Test
     public void test_1(){
