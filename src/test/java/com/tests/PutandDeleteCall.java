@@ -1,6 +1,7 @@
 package com.tests;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
@@ -17,8 +18,8 @@ public class PutandDeleteCall extends BaseTest {
         JSONObject data = new JSONObject();
         data.put("name", "xyz");
         data.put("job", "abc");
-        Response response = RestAssured.given().body(data.toJSONString()).pathParam("id", userId)
-                .when().put("/api/users/{id}").then().extract().response();
+        Response response = RestAssured.given().body(data.toJSONString()).contentType(ContentType.JSON)
+                .pathParam("id", userId).when().put("/api/users/{id}").then().extract().response();
         JsonPath jsonData = response.jsonPath();
         Assert.assertEquals(response.getStatusCode(), 200);
         Assert.assertEquals(jsonData.getString("name"), "xyz");
