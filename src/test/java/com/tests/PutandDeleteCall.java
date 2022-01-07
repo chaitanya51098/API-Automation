@@ -23,6 +23,7 @@ public class PutandDeleteCall extends BaseTest {
         JsonPath jsonData = response.jsonPath();
         Assert.assertEquals(response.getStatusCode(), 200);
         Assert.assertEquals(jsonData.getString("name"), "xyz");
+
     }
 
     @Test
